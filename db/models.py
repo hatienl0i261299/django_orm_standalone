@@ -25,6 +25,9 @@ class Post(BaseModel):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = 'posts'
+
 
 class User(BaseModel):
     email = models.EmailField(unique=True, blank=False, null=False)
@@ -39,3 +42,6 @@ class User(BaseModel):
 
     def __str__(self):
         return self.email
+
+    class Meta:
+        db_table = 'users'
