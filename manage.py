@@ -3,6 +3,7 @@ import django
 from decouple import config
 from django.conf import settings
 from django.core.management import execute_from_command_line
+from django.conf import global_settings
 
 
 def init_django():
@@ -16,6 +17,7 @@ def init_django():
     db_port = config('DB_PORT')
 
     settings.configure(
+        global_settings,
         INSTALLED_APPS=[
             'db',
         ],
